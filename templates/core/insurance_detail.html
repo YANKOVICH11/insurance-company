@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <a href="{% url 'insurance_products' %}" class="btn" style="background: #95a5a6; margin-bottom: 20px;">← Назад к продуктам</a>
+    
+    <h2 style="color: #2c3e50;">{{ insurance.name }}</h2>
+    <p style="font-size: 18px; color: #666;">{{ insurance.description|default:"Надежная страховая защита" }}</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 25px 0;">
+        <div style="background: #e8f4f8; padding: 15px; border-radius: 10px; text-align: center;">
+            <h3>📊 Базовая ставка</h3>
+            <p style="font-size: 28px; color: #3498db;">{{ insurance.base_rate }}%</p>
+        </div>
+        <div style="background: #e8f4f8; padding: 15px; border-radius: 10px; text-align: center;">
+            <h3>💰 Комиссия агента</h3>
+            <p style="font-size: 28px; color: #2ecc71;">{{ insurance.commission_percent }}%</p>
+        </div>
+        <div style="background: #e8f4f8; padding: 15px; border-radius: 10px; text-align: center;">
+            <h3>⏱️ Срок действия</h3>
+            <p style="font-size: 28px; color: #e74c3c;">1-10 лет</p>
+        </div>
+    </div>
+    
+    <h3>💰 Примеры расчета страховой премии:</h3>
+    <table border="1" style="width:100%; border-collapse: collapse; margin: 20px 0;">
+        <thead>
+            <tr>
+                <th>Страховая сумма</th>
+                <th>Платеж в год</th>
+                <th>Платеж в месяц</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for calc in calculations %}
+            <tr>
+                <td>{{ calc.amount|floatformat:0 }} руб.</td>
+                <td>{{ calc.yearly|floatformat:2 }} руб.</td>
+                <td>{{ calc.monthly|floatformat:2 }} руб.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <h3>⏱️ Стоимость на разные сроки (при страховой сумме 50 000 руб.):</h3>
+    <table border="1" style="width:100%; border-collapse: collapse; margin: 20px 0;">
+        <thead>
+            <tr><th>Срок страхования</th><th>Общая стоимость</th></tr>
+        </thead>
+        <tbody>
+            {% for term in term_payments %}
+            <tr>
+                <td>{{ term.years }} {% if term.years == 1 %}год{% elif term.years < 5 %}года{% else %}лет{% endif %}</td>
+                <td>{{ term.total|floatformat:2 }} руб. {% if term.years > 1 %} (с экономией){% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 25px 0;">
+        <h3>📋 Что входит в программу:</h3>
+        <ul style="margin-left: 20px;">
+            <li>✅ Полная страховая защита</li>
+            <li>✅ Выплата при наступлении страхового случая</li>
+            <li>✅ Круглосуточная поддержка</li>
+            <li>✅ Быстрое урегулирование убытков</li>
+            <li>✅ Помощь на дорогах (для КАСКО)</li>
+        </ul>
+    </div>
+    
+    <div style="text-align: center;">
+        <a href="{% url 'buy_insurance' %}" class="btn" style="background: #2ecc71; font-size: 18px; padding: 15px 30px;">✅ Оформить онлайн</a>
+        <a href="{% url 'contacts' %}" class="btn" style="background: #3498db; font-size: 18px; padding: 15px 30px;">📞 Получить консультацию</a>
+    </div>
+</div>
+{% endblock %}

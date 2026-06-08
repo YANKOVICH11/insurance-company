@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>Погода в Минске</h2>
+    <h3>{{ weather.name }}</h3>
+    <p>🌡️ Температура: {{ weather.main.temp }}°C</p>
+    <p>💧 Влажность: {{ weather.main.humidity }}%</p>
+    <p>☁️ {{ weather.weather.0.description }}</p>
+</div>
+{% endblock %}

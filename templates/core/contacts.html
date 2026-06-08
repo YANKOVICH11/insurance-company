@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>📞 Контакты</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 30px;">
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+            <h3 style="color: #2c3e50;">🏢 Головной офис</h3>
+            <p>📍 Адрес: г. Минск, пр. Независимости, 100</p>
+            <p>📞 Телефон: +375 (17) 123-45-67</p>
+            <p>📠 Факс: +375 (17) 123-45-68</p>
+            <p>📧 Email: info@zashita.by</p>
+            <p>🕐 Режим работы: Пн-Пт с 9:00 до 18:00</p>
+        </div>
+        
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+            <h3 style="color: #2c3e50;">📞 Горячая линия</h3>
+            <p style="font-size: 24px; margin: 10px 0;">📱 +375 (29) 777-88-99</p>
+            <p style="font-size: 24px; margin: 10px 0;">📱 +375 (33) 777-88-99</p>
+            <p>🕐 Круглосуточно, без выходных</p>
+        </div>
+    </div>
+    
+    <h3>👥 Наши сотрудники</h3>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px;">
+        {% for employee in employees %}
+        <div style="border: 1px solid #ddd; border-radius: 10px; padding: 15px; background: #f9f9f9;">
+            <h3>👤 {{ employee.full_name }}</h3>
+            <p><strong>Должность:</strong> {{ employee.position }}</p>
+            <p><strong>Описание:</strong> {{ employee.description }}</p>
+            <p><strong>📞 Телефон:</strong> {{ employee.phone }}</p>
+            <p><strong>✉️ Email:</strong> {{ employee.email }}</p>
+            <p><strong>📍 Филиал:</strong> {{ employee.branch.name }}</p>
+        </div>
+        {% empty %}
+        <p>Сотрудники не добавлены</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

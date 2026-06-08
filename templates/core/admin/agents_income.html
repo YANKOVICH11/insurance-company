@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>💰 Доходы страховых агентов</h2>
+    
+    <table border="1" style="width:100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Агент</th>
+                <th>Филиал</th>
+                <th>Кол-во договоров</th>
+                <th>Общая страховая сумма</th>
+                <th>Комиссия (от вида страхования)</th>
+                <th>Итого доход</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in agents_data %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td><strong>{{ item.agent.full_name }}</strong></td>
+                <td>{{ item.agent.branch.name }}</td>
+                <td>{{ item.contracts_count }}</td>
+                <td>{{ item.total_insurance_sum|floatformat:2 }} руб.</td>
+                <td>от 10% до 25%</td>
+                <td style="background: #d4edda; font-weight: bold;">{{ item.total_commission|floatformat:2 }} руб.</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="7" style="text-align: center;">Нет данных</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    {% if agents_data %}
+    <div style="margin-top: 20px; padding: 15px; background: #e8f4f8; border-radius: 5px;">
+        <h3>📊 Итоговая статистика:</h3>
+        <p>👥 Всего агентов: <strong>{{ agents_data|length }}</strong></p>
+        <p>💰 Общая сумма комиссионных: <strong>{{ agents_data|sum:"total_commission"|floatformat:2 }} руб.</strong></p>
+        <p>📋 Всего заключенных договоров: <strong>{{ agents_data|sum:"contracts_count" }}</strong></p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

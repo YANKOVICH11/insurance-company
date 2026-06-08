@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>⭐ Отзывы клиентов</h2>
+    
+    {% if avg_rating %}
+    <div style="background: linear-gradient(135deg, #f39c12, #f1c40f); padding: 20px; border-radius: 10px; margin-bottom: 20px; text-align: center; color: white;">
+        <p style="font-size: 36px; margin: 0;">{{ avg_rating|floatformat:1 }} / 5</p>
+        <p style="font-size: 18px;">Общий рейтинг на основе {{ reviews_count }} отзывов</p>
+        <div style="font-size: 24px;">
+            {% for i in "12345"|make_list %}
+                {% if forloop.counter <= avg_rating %}⭐{% else %}☆{% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    
+    {% if user.is_authenticated %}
+    <div style="background: #e8f4f8; padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+        <h3>✍️ Оставить отзыв</h3>
+        <form method="post">
+            {% csrf_token %}
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px;">Оценка:</label>
+                {{ form.rating }}
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px;">Текст отзыва:</label>
+                {{ form.text }}
+            </div>
+            <button type="submit" class="btn" style="background: #2ecc71;">📨 Отправить отзыв</button>
+        </form>
+    </div>
+    {% else %}
+    <div style="background: #fff3cd; padding: 15px; border-radius: 10px; margin-bottom: 20px; text-align: center;">
+        <p>🔐 <a href="{% url 'login' %}" style="color: #856404;">Войдите</a> или <a href="{% url 'register' %}" style="color: #856404;">зарегистрируйтесь</a>, чтобы оставить отзыв.</p>
+    </div>
+    {% endif %}
+    
+    <h3>📝 Все отзывы ({{ reviews.count }})</h3>
+    
+    {% for review in reviews %}
+    <div style="border-bottom: 1px solid #ddd; margin-bottom: 20px; padding-bottom: 15px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <p><strong>{{ review.client_name }}</strong></p>
+            <p style="color: #f39c12; font-size: 18px;">
+                {% for i in "12345"|make_list %}
+                    {% if forloop.counter <= review.rating %}★{% else %}☆{% endif %}
+                {% endfor %}
+            </p>
+        </div>
+        <p style="margin: 10px 0; font-size: 15px;">{{ review.text }}</p>
+        <small style="color: #999;">📅 {{ review.date|date:"d/m/Y" }}</small>
+    </div>
+    {% empty %}
+    <p style="text-align: center; padding: 30px;">Пока нет отзывов. Будьте первым!</p>
+    {% endfor %}
+</div>
+{% endblock %}

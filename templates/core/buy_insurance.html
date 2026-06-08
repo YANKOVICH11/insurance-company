@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>🛡️ Оформление страховки</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; margin-bottom: 5px;">Вид страхования:</label>
+            {{ form.insurance_type }}
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; margin-bottom: 5px;">Страховая сумма (руб.):</label>
+            {{ form.insurance_sum }}
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; margin-bottom: 5px;">Тарифная ставка (%):</label>
+            {{ form.tariff_rate }}
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label style="display: block; margin-bottom: 5px;">Филиал:</label>
+            {{ form.branch }}
+        </div>
+        <button type="submit" class="btn" style="background: #2ecc71;">✅ Оформить договор</button>
+        <a href="{% url 'dashboard' %}" class="btn" style="background: #95a5a6;">❌ Отмена</a>
+    </form>
+</div>
+{% endblock %}

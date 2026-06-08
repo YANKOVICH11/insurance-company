@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>👥 Страховые агенты по филиалам</h2>
+    
+    {% for branch in branches %}
+    <div style="margin-bottom: 30px; border: 1px solid #ddd; border-radius: 5px; padding: 15px;">
+        <h3 style="color: #2c3e50;">🏢 {{ branch.name }}</h3>
+        <p>📍 Адрес: {{ branch.address }} | 📞 Телефон: {{ branch.phone }}</p>
+        
+        <table border="1" style="width:100%; border-collapse: collapse; margin-top: 10px;">
+            <thead>
+                <tr>
+                    <th>ФИО агента</th>
+                    <th>Телефон</th>
+                    <th>Количество договоров</th>
+                    <th>Общая сумма страховок</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for agent in branch.agents.all %}
+                <tr>
+                    <td>{{ agent.full_name }}</td>
+                    <td>{{ agent.phone }}</td>
+                    <td>{{ agent.contracts.count }}</td>
+                    <td>
+                        {% for contract in agent.contracts.all %}
+                            {% if forloop.first %}{{ contract.insurance_sum|floatformat:2 }}{% endif %}
+                        {% endfor %}
+                        {% if agent.contracts.count > 1 %} + еще {{ agent.contracts.count|add:"-1" }}{% endif %}
+                    </td>
+                </tr>
+                {% empty %}
+                <tr><td colspan="4" style="text-align: center;">Нет агентов</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

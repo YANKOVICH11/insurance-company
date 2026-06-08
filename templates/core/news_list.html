@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>📰 Новости компании</h2>
+    
+    {% for item in news %}
+    <div style="border-bottom: 2px solid #eee; margin-bottom: 25px; padding-bottom: 20px;">
+        <h3 style="color: #2c3e50;">{{ item.title }}</h3>
+        <p style="color: #888; font-size: 12px;">📅 {{ item.published_date|date:"d/m/Y" }}</p>
+        <p style="font-size: 16px; margin: 15px 0;">{{ item.summary }}</p>
+        <a href="{% url 'news_detail' item.id %}" class="btn" style="background: #3498db;">📖 Читать далее →</a>
+    </div>
+    {% empty %}
+    <p>Новостей пока нет.</p>
+    {% endfor %}
+</div>
+{% endblock %}

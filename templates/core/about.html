@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>О компании "Защита"</h2>
+    <p>Страховая компания "Защита" работает на рынке страховых услуг с 2010 года. Мы предлагаем надежные страховые решения для физических и юридических лиц.</p>
+    
+    <h3>Наши филиалы:</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px;">
+        {% for branch in branches %}
+        <div style="background: #f8f9fa; padding: 15px; border-radius: 10px;">
+            <h4>{{ branch.name }}</h4>
+            <p>📍 {{ branch.address }}</p>
+            <p>📞 {{ branch.phone }}</p>
+        </div>
+        {% empty %}
+        <p>Филиалы не добавлены</p>
+        {% endfor %}
+    </div>
+    
+    <h3>Наши преимущества:</h3>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 20px;">
+        <div>✅ Быстрое оформление договоров</div>
+        <div>✅ Индивидуальный подход к каждому клиенту</div>
+        <div>✅ Выплаты без задержек</div>
+        <div>✅ Профессиональные страховые агенты</div>
+        <div>✅ Широкая сеть филиалов</div>
+        <div>✅ Онлайн-оформление страховок</div>
+    </div>
+</div>
+{% endblock %}

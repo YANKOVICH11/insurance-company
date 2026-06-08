@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>Вакансии</h2>
+    
+    {% for vacancy in vacancies %}
+    <div style="border: 1px solid #ddd; border-radius: 5px; margin-bottom: 15px; padding: 15px;">
+        <h3>{{ vacancy.title }}</h3>
+        <p><strong>Описание:</strong> {{ vacancy.description }}</p>
+        <p><strong>Требования:</strong> {{ vacancy.requirements }}</p>
+        <p><strong>Местоположение:</strong> {{ vacancy.location }}</p>
+        <p><strong>Дата публикации:</strong> {{ vacancy.posted_date|date:"d/m/Y" }}</p>
+    </div>
+    {% empty %}
+    <p>Активных вакансий нет.</p>
+    {% endfor %}
+</div>
+{% endblock %}

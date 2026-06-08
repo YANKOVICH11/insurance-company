@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>📋 Все договоры страхования</h2>
+    
+    <div style="margin-bottom: 20px; padding: 15px; background: #e8f4f8; border-radius: 5px;">
+        <p><strong>📊 Общая страховая сумма:</strong> {{ total_insurance_sum|floatformat:2 }} руб.</p>
+        <p><strong>💵 Общая сумма страховых платежей:</strong> {{ total_payments|floatformat:2 }} руб.</p>
+        <p><strong>📄 Всего договоров:</strong> {{ contracts|length }}</p>
+    </div>
+    
+    <table border="1" style="width:100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>№ договора</th>
+                <th>Клиент</th>
+                <th>Агент</th>
+                <th>Вид страхования</th>
+                <th>Филиал</th>
+                <th>Страховая сумма</th>
+                <th>Тариф (%)</th>
+                <th>Страховой платеж</th>
+                <th>Комиссия агента</th>
+                <th>Статус</th>
+                <th>Дата начала</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contract in contracts %}
+            <tr>
+                <td>{{ contract.contract_number|slice:":8" }}...</td>
+                <td>{{ contract.client.last_name }} {{ contract.client.first_name }}</td>
+                <td>{{ contract.agent.full_name }}</td>
+                <td>{{ contract.insurance_type.name }}</td>
+                <td>{{ contract.branch.name }}</td>
+                <td>{{ contract.insurance_sum|floatformat:2 }}</td>
+                <td>{{ contract.tariff_rate }}%</td>
+                <td><strong>{{ contract.insurance_payment|floatformat:2 }}</strong></td>
+                <td>{{ contract.agent_commission|floatformat:2 }}</td>
+                <td>
+                    {% if contract.status == 'active' %}✅ Активен
+                    {% elif contract.status == 'expired' %}⏰ Истек
+                    {% elif contract.status == 'pending' %}⏳ На рассмотрении
+                    {% else %}{{ contract.get_status_display }}{% endif %}
+                </td>
+                <td>{{ contract.start_date|date:"d/m/Y" }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="11" style="text-align: center;">Нет договоров</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

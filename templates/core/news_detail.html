@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <a href="{% url 'news_list' %}" class="btn" style="background: #95a5a6; margin-bottom: 20px;">← Назад к новостям</a>
+    
+    <h2 style="color: #2c3e50;">{{ news.title }}</h2>
+    <p style="color: #888; font-size: 12px;">📅 {{ news.published_date|date:"d/m/Y" }}</p>
+    
+    <div style="margin-top: 20px; line-height: 1.8; font-size: 16px; background: #f9f9f9; padding: 20px; border-radius: 10px;">
+        {{ news.content|linebreaks }}
+    </div>
+    
+    <div style="margin-top: 30px; padding: 15px; background: #e8f4f8; border-radius: 10px;">
+        <p>📞 По вопросам обращайтесь по телефону: <strong>+375 (29) 777-88-99</strong></p>
+        <p>✉️ Email: <strong>info@zashita.by</strong></p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>🛡️ Наши страховые продукты</h2>
+    <p>Выберите подходящую страховую программу и получите защиту уже сегодня!</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; margin-top: 30px;">
+        
+        {% for product in products %}
+        <div style="border: 1px solid #ddd; border-radius: 15px; padding: 20px; background: white; transition: transform 0.3s;">
+            <h3 style="color: #2c3e50; text-align: center;">{{ product.type.name }}</h3>
+            <p style="color: #666; text-align: center; min-height: 60px;">{{ product.type.description|default:"Надежная защита" }}</p>
+            
+            <div style="background: #f8f9fa; border-radius: 10px; padding: 15px; margin: 15px 0;">
+                <p><strong>📊 Базовая ставка:</strong> {{ product.type.base_rate }}%</p>
+                <p><strong>💰 Комиссия агента:</strong> {{ product.type.commission_percent }}%</p>
+                <p><strong>📋 Страховая сумма:</strong> {{ product.sample_sum|floatformat:0 }} руб.</p>
+                <p><strong>💵 Платеж в месяц:</strong> {{ product.monthly_payment|floatformat:2 }} руб.</p>
+                <p><strong>📅 Платеж в год:</strong> {{ product.yearly_payment|floatformat:2 }} руб.</p>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="{% url 'insurance_detail' product.type.id %}" class="btn" style="background: #3498db; width: 100%; display: inline-block; text-align: center;">📖 Подробнее →</a>
+            </div>
+        </div>
+        {% empty %}
+        <p>Нет доступных продуктов</p>
+        {% endfor %}
+    </div>
+    
+    <div style="margin-top: 40px; background: #e8f4f8; padding: 20px; border-radius: 10px; text-align: center;">
+        <h3>📞 Нужна консультация?</h3>
+        <p>Свяжитесь с нашими специалистами: <strong>+375 (29) 777-88-99</strong></p>
+        <a href="{% url 'contacts' %}" class="btn" style="background: #2ecc71; display: inline-block;">Связаться</a>
+    </div>
+</div>
+{% endblock %}

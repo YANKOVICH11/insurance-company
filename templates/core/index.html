@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); color: white; text-align: center;">
+    <h2>🏢 Страховая компания "Защита"</h2>
+    <p style="font-size: 18px;">Надёжная защита для вас и вашего имущества с 2010 года</p>
+    <a href="{% url 'buy_insurance' %}" class="btn" style="background: #e74c3c; margin-top: 15px;">🚀 Оформить страховку</a>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+    <div class="card">
+        <h3>🏢 Наши филиалы</h3>
+        <ul>
+            {% for branch in branches %}
+            <li><strong>{{ branch.name }}</strong> - {{ branch.address }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <div class="card">
+        <h3>✅ Наши услуги</h3>
+        <ul>
+            {% for type in insurance_types %}
+            <li><strong>{{ type.name }}</strong> - {{ type.description|truncatechars:50 }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% if latest_news %}
+<div class="card">
+    <h3>📰 Последняя новость</h3>
+    <h2 style="color: #2c3e50;">{{ latest_news.title }}</h2>
+    <p style="color: #666;">📅 {{ latest_news.published_date|date:"d/m/Y" }}</p>
+    <p>{{ latest_news.summary }}</p>
+    <a href="{% url 'news_detail' latest_news.id %}" class="btn">📖 Читать далее →</a>
+</div>
+{% endif %}
+
+<!-- Календарь -->
+<div class="card">
+    <h3>📅 {{ month_name }} {{ year }}</h3>
+    <table style="width: 100%; text-align: center; border-collapse: collapse;">
+        <thead>
+            <tr style="background: #3498db; color: white;">
+                {% for day in weekdays %}
+                <th style="padding: 8px;">{{ day }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for week in calendar %}
+            <tr>
+                {% for day in week %}
+                {% if day == 0 %}
+                <td style="padding: 8px; color: #ccc;">&nbsp;</td>
+                {% elif day == today %}
+                <td style="padding: 8px; background: #e74c3c; color: white; border-radius: 50%; font-weight: bold;">{{ day }}</td>
+                {% else %}
+                <td style="padding: 8px;">{{ day }}</td>
+                {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p style="text-align: center; margin-top: 10px; color: #666;">
+        Сегодня: {% now "d.m.Y" %}
+    </p>
+</div>
+
+<div class="card">
+    <h3>🌟 Почему выбирают нас?</h3>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+        <div style="text-align: center;">
+            <div style="font-size: 40px;">⚡</div>
+            <p>Быстрое оформление</p>
+        </div>
+        <div style="text-align: center;">
+            <div style="font-size: 40px;">💰</div>
+            <p>Низкие тарифы</p>
+        </div>
+        <div style="text-align: center;">
+            <div style="font-size: 40px;">🤝</div>
+            <p>Индивидуальный подход</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

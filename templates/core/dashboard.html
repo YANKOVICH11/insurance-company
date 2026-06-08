@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>👤 Личный кабинет</h2>
+    <p>Добро пожаловать, <strong>{{ user.username }}</strong>!</p>
+    
+    {% if client %}
+    <div style="background: #e8f4f8; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+        <h3>📋 Ваши данные:</h3>
+        <p><strong>ФИО:</strong> {{ client.last_name }} {{ client.first_name }}</p>
+        <p><strong>Email:</strong> {{ client.email }}</p>
+        <p><strong>Телефон:</strong> {{ client.phone }}</p>
+        <p><strong>Дата рождения:</strong> {{ client.date_of_birth|date:"d/m/Y" }}</p>
+    </div>
+    
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h3>📄 Ваши договоры:</h3>
+        <a href="{% url 'buy_insurance' %}" class="btn" style="background: #2ecc71;">➕ Купить страховку</a>
+    </div>
+    
+    <table border="1" style="width:100%; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>№ договора</th>
+                <th>Вид страхования</th>
+                <th>Страховая сумма</th>
+                <th>Тариф (%)</th>
+                <th>Страховой платеж</th>
+                <th>Статус</th>
+                <th>Дата начала</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contract in contracts %}
+            <tr>
+                <td>{{ contract.contract_number|slice:":8" }}...</td>
+                <td>{{ contract.insurance_type.name }}</td>
+                <td>{{ contract.insurance_sum|floatformat:2 }} руб.</td>
+                <td>{{ contract.tariff_rate }}%</td>
+                <td>{{ contract.insurance_payment|floatformat:2 }} руб.</td>
+                <td>
+                    {% if contract.status == 'active' %}✅ Активен
+                    {% elif contract.status == 'expired' %}⏰ Истек
+                    {% elif contract.status == 'pending' %}⏳ На рассмотрении
+                    {% else %}{{ contract.get_status_display }}{% endif %}
+                </td>
+                <td>{{ contract.start_date|date:"d/m/Y" }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="7" style="text-align: center;">У вас нет договоров</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div style="background: #fff3cd; padding: 20px; border-radius: 10px; text-align: center;">
+        <p>Ваш профиль клиента не заполнен.</p>
+        <p>Обратитесь к администратору для заполнения данных.</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>⚙️ Административная панель</h2>
+    <p>Добро пожаловать, {{ user.username }}! Управляйте системой страхования.</p>
+    
+    <div class="stats-grid">
+        <div class="stat-card blue">
+            <h3>Филиалы</h3>
+            <div class="number">{{ stats.total_branches }}</div>
+        </div>
+        <div class="stat-card green">
+            <h3>Агенты</h3>
+            <div class="number">{{ stats.total_agents }}</div>
+        </div>
+        <div class="stat-card red">
+            <h3>Клиенты</h3>
+            <div class="number">{{ stats.total_clients }}</div>
+        </div>
+        <div class="stat-card orange">
+            <h3>Договоры</h3>
+            <div class="number">{{ stats.total_contracts }}</div>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: 20px;">
+        <h3>Финансовые показатели:</h3>
+        <p>✅ Активных договоров: <strong>{{ stats.active_contracts }}</strong></p>
+        <p>💰 Общая страховая сумма: <strong>{{ stats.total_insurance_sum|floatformat:2 }} руб.</strong></p>
+    </div>
+    
+    <h3>📋 Управление системой:</h3>
+    <ul style="margin-left: 20px;">
+        <li><a href="{% url 'admin_contracts' %}">📋 Все договоры страхования</a></li>
+        <li><a href="{% url 'admin_agents' %}">👥 Агенты по филиалам</a></li>
+        <li><a href="{% url 'admin_agents_income' %}">💰 Доходы агентов</a></li>
+        <li><a href="{% url 'branch_list' %}">🏢 Управление филиалами (CRUD)</a></li>
+        <li><a href="/admin/">🔧 Django Admin панель</a></li>
+    </ul>
+    
+    <h3>📊 Договоры по видам страхования:</h3>
+    <table border="1" style="width:100%; border-collapse: collapse;">
+        <thead>
+            <tr><th>Вид страхования</th><th>Количество</th><th>Общая сумма</th></tr>
+        </thead>
+        <tbody>
+            {% for item in contracts_by_type %}
+            <tr>
+                <td>{{ item.insurance_type__name }}</td>
+                <td>{{ item.count }}</td>
+                <td>{{ item.total|floatformat:2 }} руб.</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="3">Нет данных</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

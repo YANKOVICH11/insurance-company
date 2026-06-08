@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>Статистика компании</h2>
+    
+    <h3>Основные показатели</h3>
+    <ul>
+        <li>Всего договоров: {{ total_contracts }}</li>
+        <li>Всего клиентов: {{ total_clients }}</li>
+        <li>Всего агентов: {{ total_agents }}</li>
+        <li>Всего филиалов: {{ total_branches }}</li>
+    </ul>
+    
+    <h3>Возраст клиентов</h3>
+    <ul>
+        <li>Средний возраст: {{ avg_age|floatformat:1 }} лет</li>
+        <li>Медианный возраст: {{ median_age }} лет</li>
+    </ul>
+    
+    <h3>Топ продукты</h3>
+    <ul>
+        <li>Наиболее популярный: {{ most_popular.insurance_type__name }}</li>
+        <li>Количество договоров: {{ most_popular.count }}</li>
+        <li>Наибольшая прибыль: {{ most_profitable.insurance_type__name }}</li>
+    </ul>
+    
+    <h3>Договоры по видам страхования</h3>
+    <table border="1">
+        <tr>
+            <th>Вид страхования</th>
+            <th>Количество</th>
+            <th>Общая сумма</th>
+        </tr>
+        {% for item in insurance_by_type %}
+        <tr>
+            <td>{{ item.insurance_type__name }}</td>
+            <td>{{ item.count }}</td>
+            <td>{{ item.total_sum|floatformat:0 }} руб.</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
