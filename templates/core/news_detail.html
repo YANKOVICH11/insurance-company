@@ -5,7 +5,9 @@
     
     <h2 style="color: #2c3e50;">{{ news.title }}</h2>
     <p style="color: #888; font-size: 12px;">📅 {{ news.published_date|date:"d/m/Y" }}</p>
-    
+
+    <img src="{{ news_image }}" alt="{{ news.title }}" style="width: 100%; max-width: 600px; height: auto; border-radius: 10px; margin: 20px 0; display: block;">
+
     <div style="margin-top: 20px; line-height: 1.8; font-size: 16px; background: #f9f9f9; padding: 20px; border-radius: 10px;">
         {{ news.content|linebreaks }}
     </div>

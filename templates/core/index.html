@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
 
 <div class="card" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); color: white; text-align: center;">
+    <!-- ВСТАВЛЕННАЯ КАРТИНКА -->
+    <img src="/media/news/i.jpg" alt="Страхование" style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 15px;">
     <h2>🏢 Страховая компания "Защита"</h2>
     <p>Надёжная защита для вас и вашего имущества</p>
     <a href="{% url 'buy_insurance' %}" class="btn" style="background: #e74c3c;">🚀 Оформить страховку</a>
@@ -15,7 +19,7 @@
                 {% for day in weekdays %}
                 <th>{{ day }}</th>
                 {% endfor %}
-            <tr>
+            </tr>
         </thead>
         <tbody>
             {% for week in calendar %}
@@ -61,4 +65,5 @@
         {% endfor %}
     </ul>
 </div>
+
 {% endblock %}

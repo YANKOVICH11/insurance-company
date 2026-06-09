@@ -24,6 +24,12 @@
         <li>Наибольшая прибыль: {{ most_profitable.insurance_type__name }}</li>
     </ul>
     
+    {% if chart_base64 %}
+    <h3>Графики (matplotlib)</h3>
+    <p>Диаграммы строятся на основе реальных данных из базы: количество и сумма договоров по каждому виду страхования.</p>
+    <img src="data:image/png;base64,{{ chart_base64 }}" alt="Статистика по видам страхования" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px;">
+    {% endif %}
+
     <h3>Договоры по видам страхования</h3>
     <table border="1">
         <tr>

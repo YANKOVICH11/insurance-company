@@ -1378,3 +1378,118 @@ Not Found: /media/news/bruce-mars-xj8qrWvuOEs-unsplash.jpg
 Not Found: /media/news/bruce-mars-xj8qrWvuOEs-unsplash.jpg
 Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash.jpg
 Not Found: /media/news/bruce-mars-xj8qrWvuOEs-unsplash_9dQZZ7p.jpg
+Watching for file changes with StatReloader
+Not Found: /exchange-rate
+Not Found: /products/exchange-rates
+Watching for file changes with StatReloader
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Главная страница загружена
+Главная страница загружена
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+C:\Users\Andrew\LR5\apps\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Andrew\LR5\apps\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /statistics/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrew\LR5\apps\core\views.py", line 121, in statistics
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Главная страница загружена
+Not Found: /media/news/i.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Internal Server Error: /statistics/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrew\LR5\apps\core\views.py", line 121, in statistics
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'
+Главная страница загружена
+Not Found: /media/news/i.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Internal Server Error: /statistics/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrew\LR5\apps\core\views.py", line 121, in statistics
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'
+Internal Server Error: /statistics/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrew\LR5\apps\core\views.py", line 121, in statistics
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'
+Watching for file changes with StatReloader
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Internal Server Error: /statistics/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrew\LR5\apps\core\views.py", line 121, in statistics
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'
+Internal Server Error: /statistics/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrew\LR5\apps\core\views.py", line 121, in statistics
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'
+Watching for file changes with StatReloader
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Главная страница загружена
+Not Found: /media/news/i.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Internal Server Error: /statistics/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrew\LR5\apps\core\views.py", line 121, in statistics
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg
+C:\Users\Andrew\LR5\config\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /statistics/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrew\LR5\apps\core\views.py", line 121, in statistics
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'
+Watching for file changes with StatReloader

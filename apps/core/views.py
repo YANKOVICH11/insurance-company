@@ -53,9 +53,12 @@ def news_list(request):
     context = {'news': news, 'current_date': datetime.now().strftime('%d/%m/%Y')}
     return render(request, 'core/news_list.html', context)
 
+DEFAULT_NEWS_IMAGE = '/media/news/tamanna-rumee-mIqyYpSNq3o-unsplash_mc1wSHp.jpg'
+
 def news_detail(request, news_id):
     news = get_object_or_404(News, id=news_id)
-    return render(request, 'core/news_detail.html', {'news': news})
+    news_image = news.image.url if news.image else DEFAULT_NEWS_IMAGE
+    return render(request, 'core/news_detail.html', {'news': news, 'news_image': news_image})
 
 def glossary_list(request):
     terms = Glossary.objects.all().order_by('term')
@@ -111,28 +114,55 @@ def promocodes_list(request):
     })
 
 def statistics(request):
-    from django.db.models import Count, Sum, Avg
-    
+    import base64
+    import io
+    from django.db.models import Count, Sum
+
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+
     total_contracts = InsuranceContract.objects.count()
     total_clients = Client.objects.count()
     total_agents = InsuranceAgent.objects.filter(is_active=True).count()
     total_branches = Branch.objects.count()
-    
-    insurance_by_type = InsuranceContract.objects.values('insurance_type__name').annotate(
+
+    insurance_by_type = list(InsuranceContract.objects.values('insurance_type__name').annotate(
         count=Count('id'),
         total_sum=Sum('insurance_sum')
-    )
-    
-    most_popular = insurance_by_type.order_by('-count').first()
-    most_profitable = insurance_by_type.order_by('-total_sum').first()
-    
-    ages = []
-    for client in Client.objects.all():
-        ages.append(client.age)
+    ))
+
+    most_popular = max(insurance_by_type, key=lambda x: x['count'], default=None)
+    most_profitable = max(insurance_by_type, key=lambda x: x['total_sum'] or 0, default=None)
+
+    ages = [client.age for client in Client.objects.all()]
     avg_age = sum(ages) / len(ages) if ages else 0
     ages_sorted = sorted(ages)
-    median_age = ages_sorted[len(ages_sorted)//2] if ages_sorted else 0
-    
+    median_age = ages_sorted[len(ages_sorted) // 2] if ages_sorted else 0
+
+    chart_base64 = ''
+    if insurance_by_type:
+        names = [item['insurance_type__name'] or 'Без типа' for item in insurance_by_type]
+        counts = [item['count'] for item in insurance_by_type]
+        sums = [float(item['total_sum'] or 0) for item in insurance_by_type]
+
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+        ax1.bar(names, counts, color='#3498db')
+        ax1.set_title('Количество договоров по видам страхования')
+        ax1.set_ylabel('Договоры')
+        ax1.tick_params(axis='x', rotation=25)
+
+        ax2.bar(names, sums, color='#2ecc71')
+        ax2.set_title('Сумма договоров по видам страхования')
+        ax2.set_ylabel('Сумма, руб.')
+        ax2.tick_params(axis='x', rotation=25)
+
+        fig.tight_layout()
+        buffer = io.BytesIO()
+        fig.savefig(buffer, format='png', dpi=100)
+        plt.close(fig)
+        chart_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
+
     context = {
         'total_contracts': total_contracts,
         'total_clients': total_clients,
@@ -143,6 +173,7 @@ def statistics(request):
         'most_profitable': most_profitable,
         'avg_age': avg_age,
         'median_age': median_age,
+        'chart_base64': chart_base64,
         'current_date': datetime.now().strftime('%d/%m/%Y'),
     }
     return render(request, 'core/statistics.html', context)
