@@ -7,16 +7,12 @@ from django import forms
 from apps.users.models import CustomUser
 
 class CustomUserCreationForm(UserCreationForm):
-    phone = forms.CharField(
-        max_length=20,
-        validators=[RegexValidator(r'^\+375 \(29\) \d{3}-\d{2}-\d{2}$', 'Формат: +375 (29) XXX-XX-XX')],
-        required=False
-    )
+    phone = forms.CharField(max_length=20, required=False)
     date_of_birth = forms.DateField(required=False, widget=forms.DateInput(attrs={'type': 'date'}))
     
     class Meta:
         model = CustomUser
-        fields = ('username', 'email', 'first_name', 'last_name', 'phone', 'date_of_birth', 'password1', 'password2')
+        fields = ('username', 'email', 'first_name', 'last_name', 'password1', 'password2')
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -31,10 +27,10 @@ def register(request):
             user.user_type = 'client'
             user.save()
             login(request, user)
-            messages.success(request, "Регистрация успешна! Добро пожаловать!")
+            messages.success(request, "Регистрация успешна!")
             return redirect('index')
         else:
-            messages.error(request, "Ошибка регистрации. Проверьте введенные данные.")
+            messages.error(request, "Ошибка регистрации")
     else:
         form = CustomUserCreationForm()
     

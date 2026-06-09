@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>Филиалы</h2>
+    <a href="{% url 'branch_create' %}" class="btn">Добавить</a>
+    <table border="1">
+        <tr><th>Название</th><th>Адрес</th><th>Телефон</th><th>Действия</th></tr>
+        {% for b in branches %}
+        <tr>
+            <td>{{ b.name }}</td>
+            <td>{{ b.address }}</td>
+            <td>{{ b.phone }}</td>
+            <td>
+                <a href="{% url 'branch_update' b.id %}">✏️</a>
+                <a href="{% url 'branch_delete' b.id %}">🗑️</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

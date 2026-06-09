@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>{% if branch %}Редактировать{% else %}Добавить{% endif %} филиал</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Название" value="{{ branch.name|default:'' }}"><br>
+        <textarea name="address" placeholder="Адрес">{{ branch.address|default:'' }}</textarea><br>
+        <input type="text" name="phone" placeholder="Телефон" value="{{ branch.phone|default:'' }}"><br>
+        <button type="submit">Сохранить</button>
+    </form>
+</div>
+{% endblock %}

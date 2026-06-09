@@ -34,11 +34,17 @@ urlpatterns = [
     path('exchange-rates/', views.exchange_rate_view, name='exchange_rates'),
     path('weather/', views.weather_view, name='weather'),
     
-    # CRUD операции
+    # CRUD для филиалов
     re_path(r'^crud/branches/$', views.branch_list, name='branch_list'),
     re_path(r'^crud/branches/create/$', views.branch_create, name='branch_create'),
     re_path(r'^crud/branches/(?P<pk>\d+)/update/$', views.branch_update, name='branch_update'),
     re_path(r'^crud/branches/(?P<pk>\d+)/delete/$', views.branch_delete, name='branch_delete'),
+    
+    # CRUD для видов страхования
+    path('crud/insurance-types/', views.insurance_type_list, name='insurance_type_list'),
+    path('crud/insurance-types/create/', views.insurance_type_create, name='insurance_type_create'),
+    path('crud/insurance-types/<int:pk>/update/', views.insurance_type_update, name='insurance_type_update'),
+    path('crud/insurance-types/<int:pk>/delete/', views.insurance_type_delete, name='insurance_type_delete'),
     
     # Админ панель
     path('admin-dashboard/', views.admin_dashboard, name='admin_dashboard'),

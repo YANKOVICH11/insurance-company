@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>🗑️ Удаление вида страхования</h2>
+    
+    <div style="background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 5px; padding: 15px; margin-bottom: 20px;">
+        <p style="color: #721c24;">Вы уверены, что хотите удалить <strong>"{{ insurance_type.name }}"</strong>?</p>
+        <p style="color: #721c24;">Это действие нельзя отменить.</p>
+    </div>
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger" style="background: #e74c3c;">✅ Да, удалить</button>
+        <a href="{% url 'insurance_type_list' %}" class="btn" style="background: #95a5a6;">❌ Отмена</a>
+    </form>
+</div>
+{% endblock %}

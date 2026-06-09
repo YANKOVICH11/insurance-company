@@ -3,7 +3,6 @@ from datetime import datetime, date, timedelta
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from datetime import datetime, date
 import requests
 from .models import *
 from .forms import ReviewForm, InsuranceContractForm
@@ -19,14 +18,29 @@ def index(request):
     insurance_types = InsuranceType.objects.all()[:6]
     branches = Branch.objects.all()[:3]
     
+    now = datetime.now()
+    cal = calendar.monthcalendar(now.year, now.month)
+    weekdays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
+    months_ru = {
+        1: 'Январь', 2: 'Февраль', 3: 'Март', 4: 'Апрель',
+        5: 'Май', 6: 'Июнь', 7: 'Июль', 8: 'Август',
+        9: 'Сентябрь', 10: 'Октябрь', 11: 'Ноябрь', 12: 'Декабрь'
+    }
+    month_name = months_ru[now.month]
+    
     context = {
         'latest_news': latest_news,
         'insurance_types': insurance_types,
         'branches': branches,
+        'calendar': cal,
+        'weekdays': weekdays,
+        'month_name': month_name,
+        'year': now.year,
+        'today': now.day,
         'current_date': datetime.now().strftime('%d/%m/%Y'),
         'user_timezone': get_user_timezone(request),
     }
-    logger.info(f"Главная страница загружена")
+    logger.info("Главная страница загружена")
     return render(request, 'core/index.html', context)
 
 def about(request):
@@ -35,23 +49,8 @@ def about(request):
     return render(request, 'core/about.html', context)
 
 def news_list(request):
-    news = News.objects.filter(is_published=True)
-    
-    # Поиск
-    search_query = request.GET.get('search', '')
-    if search_query:
-        news = news.filter(title__icontains=search_query) | news.filter(content__icontains=search_query)
-    
-    # Сортировка
-    sort_by = request.GET.get('sort', '-published_date')
-    news = news.order_by(sort_by)
-    
-    context = {
-        'news': news,
-        'search_query': search_query,
-        'current_sort': sort_by,
-        'current_date': datetime.now().strftime('%d/%m/%Y'),
-    }
+    news = News.objects.filter(is_published=True).order_by('-published_date')
+    context = {'news': news, 'current_date': datetime.now().strftime('%d/%m/%Y')}
     return render(request, 'core/news_list.html', context)
 
 def news_detail(request, news_id):
@@ -60,17 +59,7 @@ def news_detail(request, news_id):
 
 def glossary_list(request):
     terms = Glossary.objects.all().order_by('term')
-    
-    # Поиск
-    search_query = request.GET.get('search', '')
-    if search_query:
-        terms = terms.filter(term__icontains=search_query) | terms.filter(definition__icontains=search_query)
-    
-    context = {
-        'terms': terms,
-        'search_query': search_query,
-        'current_date': datetime.now().strftime('%d/%m/%Y'),
-    }
+    context = {'terms': terms, 'current_date': datetime.now().strftime('%d/%m/%Y')}
     return render(request, 'core/glossary.html', context)
 
 def contacts(request):
@@ -82,16 +71,7 @@ def privacy(request):
 
 def vacancies(request):
     vacancies_list = Vacancy.objects.filter(is_active=True)
-    
-    search_query = request.GET.get('search', '')
-    if search_query:
-        vacancies_list = vacancies_list.filter(title__icontains=search_query) | vacancies_list.filter(description__icontains=search_query)
-    
-    context = {
-        'vacancies': vacancies_list,
-        'search_query': search_query,
-        'current_date': datetime.now().strftime('%d/%m/%Y'),
-    }
+    context = {'vacancies': vacancies_list, 'current_date': datetime.now().strftime('%d/%m/%Y')}
     return render(request, 'core/vacancies.html', context)
 
 def reviews_list(request):
@@ -102,7 +82,7 @@ def reviews_list(request):
         if form.is_valid():
             review = form.save(commit=False)
             review.user = request.user
-            review.client_name = f"{request.user.first_name} {request.user.last_name}".strip() or request.user.username
+            review.client_name = request.user.username
             review.is_approved = True
             review.save()
             messages.success(request, "Спасибо за отзыв!")
@@ -129,39 +109,6 @@ def promocodes_list(request):
         'active_promocodes': active,
         'archived_promocodes': archived,
     })
-def index(request):
-    latest_news = News.objects.filter(is_published=True).first()
-    insurance_types = InsuranceType.objects.all()[:6]
-    branches = Branch.objects.all()[:3]
-    
-    # Календарь
-    now = datetime.now()
-    cal = calendar.monthcalendar(now.year, now.month)
-    
-    # Названия дней недели
-    weekdays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
-    
-    # Текущий месяц и год на русском
-    months_ru = {
-        1: 'Январь', 2: 'Февраль', 3: 'Март', 4: 'Апрель',
-        5: 'Май', 6: 'Июнь', 7: 'Июль', 8: 'Август',
-        9: 'Сентябрь', 10: 'Октябрь', 11: 'Ноябрь', 12: 'Декабрь'
-    }
-    month_name = months_ru[now.month]
-    
-    context = {
-        'latest_news': latest_news,
-        'insurance_types': insurance_types,
-        'branches': branches,
-        'calendar': cal,
-        'weekdays': weekdays,
-        'month_name': month_name,
-        'year': now.year,
-        'today': now.day,
-        'current_date': datetime.now().strftime('%d/%m/%Y'),
-        'user_timezone': get_user_timezone(request),
-    }
-    return render(request, 'core/index.html', context)
 
 def statistics(request):
     from django.db.models import Count, Sum, Avg
@@ -171,20 +118,14 @@ def statistics(request):
     total_agents = InsuranceAgent.objects.filter(is_active=True).count()
     total_branches = Branch.objects.count()
     
-    # Статистика по видам страхования
     insurance_by_type = InsuranceContract.objects.values('insurance_type__name').annotate(
         count=Count('id'),
-        total_sum=Sum('insurance_sum'),
-        avg_sum=Avg('insurance_sum')
+        total_sum=Sum('insurance_sum')
     )
     
-    # Наиболее популярный вид
     most_popular = insurance_by_type.order_by('-count').first()
-    
-    # Наибольшая прибыль
     most_profitable = insurance_by_type.order_by('-total_sum').first()
     
-    # Статистика по возрастам клиентов
     ages = []
     for client in Client.objects.all():
         ages.append(client.age)
@@ -244,7 +185,7 @@ def buy_insurance(request):
             if agent:
                 contract.agent = agent
             contract.save()
-            messages.success(request, f"Договор успешно оформлен!")
+            messages.success(request, "Договор успешно оформлен!")
             return redirect('dashboard')
     else:
         form = InsuranceContractForm()
@@ -258,7 +199,7 @@ def exchange_rate_view(request):
     try:
         response = requests.get('https://api.nbrb.by/exrates/rates?periodicity=0')
         rates = response.json()
-        main_rates = [r for r in rates if r['Cur_Abbreviation'] in ['USD', 'EUR', 'RUB', 'CNY']]
+        main_rates = [r for r in rates if r['Cur_Abbreviation'] in ['USD', 'EUR', 'RUB']]
     except:
         main_rates = []
     return render(request, 'core/exchange_rates.html', {'rates': main_rates})
@@ -318,26 +259,15 @@ def insurance_detail(request, insurance_id):
             'monthly': monthly_payment,
         })
     
-    terms = [1, 3, 5, 10]
-    base_amount = 50000
-    base_yearly = base_amount * (insurance.base_rate / 100)
-    term_payments = []
-    for term in terms:
-        total = base_yearly * term
-        term_payments.append({
-            'years': term,
-            'total': total,
-        })
-    
     context = {
         'insurance': insurance,
         'calculations': calculations,
-        'term_payments': term_payments,
         'current_date': datetime.now().strftime('%d/%m/%Y'),
     }
     return render(request, 'core/insurance_detail.html', context)
 
-# CRUD операции
+# ==================== CRUD ДЛЯ ФИЛИАЛОВ ====================
+
 def branch_list(request):
     branches = Branch.objects.all()
     return render(request, 'core/crud/branch_list.html', {'branches': branches})
@@ -373,7 +303,51 @@ def branch_delete(request, pk):
         return redirect('branch_list')
     return render(request, 'core/crud/branch_confirm_delete.html', {'branch': branch})
 
-# Админ панель
+# ==================== CRUD ДЛЯ СТРАХОВОК ====================
+
+def insurance_type_list(request):
+    """Список видов страхования (READ)"""
+    insurance_types = InsuranceType.objects.all().order_by('id')
+    return render(request, 'core/crud/insurance_type_list.html', {'insurance_types': insurance_types})
+
+def insurance_type_create(request):
+    """Создание вида страхования (CREATE)"""
+    if request.method == 'POST':
+        insurance_type = InsuranceType(
+            name=request.POST['name'],
+            description=request.POST.get('description', ''),
+            commission_percent=request.POST['commission_percent'],
+            base_rate=request.POST['base_rate']
+        )
+        insurance_type.save()
+        messages.success(request, "Вид страхования создан")
+        return redirect('insurance_type_list')
+    return render(request, 'core/crud/insurance_type_form.html')
+
+def insurance_type_update(request, pk):
+    """Редактирование вида страхования (UPDATE)"""
+    insurance_type = get_object_or_404(InsuranceType, id=pk)
+    if request.method == 'POST':
+        insurance_type.name = request.POST['name']
+        insurance_type.description = request.POST.get('description', '')
+        insurance_type.commission_percent = request.POST['commission_percent']
+        insurance_type.base_rate = request.POST['base_rate']
+        insurance_type.save()
+        messages.success(request, "Вид страхования обновлен")
+        return redirect('insurance_type_list')
+    return render(request, 'core/crud/insurance_type_form.html', {'insurance_type': insurance_type})
+
+def insurance_type_delete(request, pk):
+    """Удаление вида страхования (DELETE)"""
+    insurance_type = get_object_or_404(InsuranceType, id=pk)
+    if request.method == 'POST':
+        insurance_type.delete()
+        messages.success(request, "Вид страхования удален")
+        return redirect('insurance_type_list')
+    return render(request, 'core/crud/insurance_type_confirm_delete.html', {'insurance_type': insurance_type})
+
+# ==================== АДМИН ПАНЕЛЬ (ОСТАЛЬНОЕ) ====================
+
 @login_required
 def admin_dashboard(request):
     if not request.user.is_superuser:
@@ -388,17 +362,10 @@ def admin_dashboard(request):
         'total_clients': Client.objects.count(),
         'total_contracts': InsuranceContract.objects.count(),
         'active_contracts': InsuranceContract.objects.filter(status='active').count(),
-        'total_insurance_sum': InsuranceContract.objects.aggregate(Sum('insurance_sum'))['insurance_sum__sum'] or 0,
     }
-    
-    contracts_by_type = InsuranceContract.objects.values('insurance_type__name').annotate(
-        count=Count('id'),
-        total=Sum('insurance_sum')
-    )
     
     context = {
         'stats': stats,
-        'contracts_by_type': contracts_by_type,
         'current_date': datetime.now().strftime('%d/%m/%Y'),
     }
     return render(request, 'core/admin/dashboard.html', context)
@@ -409,14 +376,9 @@ def admin_contracts(request):
         messages.error(request, "Доступ только для администратора")
         return redirect('index')
     
-    contracts = InsuranceContract.objects.select_related('client', 'agent', 'insurance_type', 'branch').all()
-    total_insurance_sum = sum(c.insurance_sum for c in contracts)
-    total_payments = sum(c.insurance_payment for c in contracts)
-    
+    contracts = InsuranceContract.objects.select_related('client', 'agent', 'insurance_type').all()
     context = {
         'contracts': contracts,
-        'total_insurance_sum': total_insurance_sum,
-        'total_payments': total_payments,
         'current_date': datetime.now().strftime('%d/%m/%Y'),
     }
     return render(request, 'core/admin/contracts.html', context)
@@ -428,7 +390,6 @@ def admin_agents(request):
         return redirect('index')
     
     branches = Branch.objects.prefetch_related('agents').all()
-    
     context = {
         'branches': branches,
         'current_date': datetime.now().strftime('%d/%m/%Y'),
@@ -446,15 +407,11 @@ def admin_agents_income(request):
     for agent in agents:
         contracts = agent.contracts.all()
         total_commission = sum(c.agent_commission for c in contracts)
-        total_insurance_sum = sum(c.insurance_sum for c in contracts)
         agents_data.append({
             'agent': agent,
             'contracts_count': contracts.count(),
-            'total_insurance_sum': total_insurance_sum,
             'total_commission': total_commission,
         })
-    
-    agents_data.sort(key=lambda x: x['total_commission'], reverse=True)
     
     context = {
         'agents_data': agents_data,
@@ -464,15 +421,11 @@ def admin_agents_income(request):
 
 @login_required
 def employee_contracts(request):
-    if request.user.is_superuser:
-        return redirect('admin_dashboard')
-    
     if request.user.user_type == 'client':
-        messages.error(request, "Эта страница только для сотрудников")
+        messages.error(request, "Доступ только для сотрудников")
         return redirect('dashboard')
     
-    contracts = InsuranceContract.objects.select_related('client', 'agent', 'insurance_type', 'branch').all()
-    
+    contracts = InsuranceContract.objects.select_related('client', 'agent', 'insurance_type').all()
     context = {
         'contracts': contracts,
         'current_date': datetime.now().strftime('%d/%m/%Y'),

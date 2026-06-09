@@ -469,3 +469,912 @@ Session data corrupted
 Session data corrupted
 Session data corrupted
 Session data corrupted
+Watching for file changes with StatReloader
+Session data corrupted
+Session data corrupted
+Session data corrupted
+Session data corrupted
+Not Found: /static/admin/js/theme.js
+Session data corrupted
+Session data corrupted
+Not Found: /static/admin/css/base.css
+Session data corrupted
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/dark_mode.css
+Session data corrupted
+Session data corrupted
+Not Found: /static/admin/css/login.css
+Not Found: /static/admin/css/responsive.css
+Session data corrupted
+Not Found: /static/admin/js/nav_sidebar.js
+Session data corrupted
+Not Found: /static/admin/css/nav_sidebar.css
+Session data corrupted
+Session data corrupted
+Session data corrupted
+Session data corrupted
+Session data corrupted
+Session data corrupted
+Session data corrupted
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/nav_sidebar.css
+Session data corrupted
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/login.css
+Not Found: /static/admin/css/responsive.css
+Session data corrupted
+Not Found: /static/admin/css/nav_sidebar.css
+Session data corrupted
+Session data corrupted
+Not Found: /static/admin/css/login.css
+Not Found: /static/admin/js/nav_sidebar.js
+Session data corrupted
+Session data corrupted
+Session data corrupted
+Not Found: /static/admin/css/base.css
+Session data corrupted
+Session data corrupted
+Not Found: /static/admin/js/theme.js
+Session data corrupted
+Not Found: /static/admin/css/login.css
+Session data corrupted
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/dark_mode.css
+Session data corrupted
+Not Found: /static/admin/js/nav_sidebar.js
+Session data corrupted
+Not Found: /static/admin/css/login.css
+Session data corrupted
+Session data corrupted
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/responsive.css
+Session data corrupted
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/dashboard.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/dashboard.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/js/calendar.js
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/admin/DateTimeShortcuts.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/img/icon-viewlink.svg
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/change_form.js
+Not Found: /static/admin/img/icon-changelink.svg
+Not Found: /static/admin/img/icon-addlink.svg
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/changelists.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/css/changelists.css
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/filters.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/nav_sidebar.js
+Internal Server Error: /crud/branches/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrew\LR5\apps\core\views.py", line 343, in branch_list
+    return render(request, 'core/crud/branch_list.html', {'branches': branches})
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: core/crud/branch_list.html
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/dashboard.css
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/dashboard.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /admin/contracts/
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/dashboard.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/dashboard.css
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/js/change_form.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/js/change_form.js
+Not Found: /static/admin/css/responsive.css
+C:\Users\Andrew\LR5\apps\core\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/change_form.js
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/change_form.js
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/dashboard.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/change_form.js
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/js/change_form.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/js/change_form.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/change_form.js
+Not Found: /static/admin/js/nav_sidebar.js
+Forbidden (CSRF token from POST incorrect.): /admin/login/
+C:\Users\Andrew\LR5\apps\core\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/dashboard.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/js/change_form.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/change_form.js
+Watching for file changes with StatReloader
+Главная страница загружена
+Internal Server Error: /crud/branches/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrew\LR5\apps\core\views.py", line 317, in branch_list
+    return render(request, 'core/crud/branch_list.html', {'branches': branches})
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: core/crud/branch_list.html
+Not Found: /admin/insurance/
+C:\Users\Andrew\LR5\apps\core\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\Andrew\LR5\apps\core\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /admin/insurance/
+Not Found: /admin/insurance/
+Not Found: /admin/insurance/create/
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/dashboard.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/dashboard.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/change_form.js
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/js/change_form.js
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/forms.css
+Not Found: /admin/insurance/
+C:\Users\Andrew\LR5\apps\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Andrew\LR5\apps\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\Andrew\LR5\apps\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /admin/insurance/
+Not Found: /admin/insurance/create/
+Not Found: /admin/insurance/1/edit/
+Not Found: /admin/insurance/1/delete/
+C:\Users\Andrew\LR5\apps\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\Andrew\LR5\apps\core\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /admin/insurance/
+Главная страница загружена
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/dashboard.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/dashboard.css
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/change_form.js
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/change_form.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/css/responsive.css
+Главная страница загружена
+Not Found: /admin/insurance/
+Watching for file changes with StatReloader
+Not Found: /admin/insurance/
+Not Found: /admin/insurance/create/
+C:\Users\Andrew\LR5\apps\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /crud/insurance-types/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrew\LR5\apps\core\views.py", line 311, in insurance_type_list
+    return render(request, 'core/crud/insurance_type_list.html', {'insurance_types': insurance_types})
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'admin_insurance_list' not found. 'admin_insurance_list' is not a valid view function or pattern name.
+Internal Server Error: /crud/insurance-types/
+Traceback (most recent call last):
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Andrew\LR5\apps\core\views.py", line 311, in insurance_type_list
+    return render(request, 'core/crud/insurance_type_list.html', {'insurance_types': insurance_types})
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 174, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\loader_tags.py", line 160, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 166, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\base.py", line 1052, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\template\defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Andrew\LR5\venv\Lib\site-packages\django\urls\resolvers.py", line 842, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'admin_insurance_list' not found. 'admin_insurance_list' is not a valid view function or pattern name.
+Watching for file changes with StatReloader
+Главная страница загружена
+Watching for file changes with StatReloader
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/dashboard.css
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/dashboard.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/changelists.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/css/changelists.css
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/img/icon-yes.svg
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/filters.js
+Not Found: /static/admin/img/icon-yes.svg
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/change_form.js
+Главная страница загружена
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/js/change_form.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /media/news/i.jpg
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/changelists.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/css/changelists.css
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/img/icon-yes.svg
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/filters.js
+Not Found: /static/admin/img/icon-yes.svg
+Not Found: /media/news/i.png
+Not Found: /media/news/i.jpg
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/cancel.js
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /media/news/i.jpg
+Not Found: /media/news/i.png
+Not Found: /media/news/i.jpg
+Not Found: /media/news/i.png
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/changelists.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/css/changelists.css
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/img/icon-yes.svg
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/js/filters.js
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/change_form.js
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/changelists.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/css/changelists.css
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/img/icon-yes.svg
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/js/filters.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash.jpg
+Not Found: /admin/agents-income/
+Watching for file changes with StatReloader
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/css/forms.css
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/js/prepopulate_init.js
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/js/change_form.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash.jpg
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/css/dark_mode.css
+Not Found: /static/admin/css/changelists.css
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/js/theme.js
+Not Found: /static/admin/js/jquery.init.js
+Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+Not Found: /static/admin/js/core.js
+Not Found: /static/admin/js/actions.js
+Not Found: /static/admin/css/nav_sidebar.css
+Not Found: /static/admin/js/urlify.js
+Not Found: /static/admin/css/changelists.css
+Not Found: /static/admin/js/prepopulate.js
+Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+Not Found: /static/admin/img/icon-yes.svg
+Not Found: /static/admin/js/nav_sidebar.js
+Not Found: /static/admin/css/responsive.css
+Not Found: /static/admin/js/filters.js
+Not Found: /static/admin/img/icon-yes.svg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash.jpg
+Not Found: /media/news/bruce-mars-xj8qrWvuOEs-unsplash.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash.jpg
+Not Found: /media/news/bruce-mars-xj8qrWvuOEs-unsplash.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash.jpg
+Not Found: /media/news/bruce-mars-xj8qrWvuOEs-unsplash.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash.jpg
+Not Found: /media/news/bruce-mars-xj8qrWvuOEs-unsplash.jpg
+Watching for file changes with StatReloader
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash.jpg
+Not Found: /media/news/bruce-mars-xj8qrWvuOEs-unsplash.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash.jpg
+Not Found: /media/news/bruce-mars-xj8qrWvuOEs-unsplash.jpg
+Not Found: /media/news/bruce-mars-xj8qrWvuOEs-unsplash.jpg
+Not Found: /media/news/tamanna-rumee-mIqyYpSNq3o-unsplash.jpg
+Not Found: /media/news/bruce-mars-xj8qrWvuOEs-unsplash_9dQZZ7p.jpg

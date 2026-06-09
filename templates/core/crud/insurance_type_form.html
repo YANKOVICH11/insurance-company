@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>{% if insurance_type %}✏️ Редактировать{% else %}➕ Добавить{% endif %} вид страхования</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        
+        <div style="margin-bottom: 15px;">
+            <label style="font-weight: bold;">Название:</label>
+            <input type="text" name="name" value="{{ insurance_type.name|default:'' }}" required style="width:100%; padding:8px; border:1px solid #ddd; border-radius:4px;">
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <label style="font-weight: bold;">Описание:</label>
+            <textarea name="description" style="width:100%; padding:8px; border:1px solid #ddd; border-radius:4px; height:100px;">{{ insurance_type.description|default:'' }}</textarea>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <label style="font-weight: bold;">Комиссия агента (%):</label>
+            <input type="number" step="0.01" name="commission_percent" value="{{ insurance_type.commission_percent|default:10 }}" required style="width:100%; padding:8px;">
+            <small>Процент от страхового платежа агенту</small>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <label style="font-weight: bold;">Базовая ставка (%):</label>
+            <input type="number" step="0.01" name="base_rate" value="{{ insurance_type.base_rate|default:1 }}" required style="width:100%; padding:8px;">
+            <small>Процент от страховой суммы для расчета платежа</small>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <button type="submit" class="btn btn-success" style="background: #2ecc71;">💾 Сохранить</button>
+            <a href="{% url 'insurance_type_list' %}" class="btn" style="background: #95a5a6;">❌ Отмена</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>Удалить {{ branch.name }}?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Да</button>
+        <a href="{% url 'branch_list' %}">Нет</a>
+    </form>
+</div>
+{% endblock %}
